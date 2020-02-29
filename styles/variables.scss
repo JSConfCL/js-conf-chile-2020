@@ -1,0 +1,39 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+// Colours
+$dark-blue: #232742;
+$black: #1C1C1C;
+$blackest: #151515;
+$grey: #C3C3C3;
+$light-grey: #F0F0F0;
+$blue: #5849FF;
+
+// Fonts
+$circular: 'CircularStd', sans-serif;
+$roboto: 'Roboto Mono', monospace;
+
+// Breakpoints
+$big-desktop: 1440px;
+$desktop: 1280px;
+$tablet: 991px;
+$small-tablet: 767px;
+$phone: 479px;
+$small-phone: 376px;
+
+// Elements
+@mixin box-sizing($box-sizing){
+  -webkit-transition: $box-sizing;
+  -moz-transition: $box-sizing;
+  transition: $box-sizing;
+}
+@mixin font-smoothing($value: antialiased) {
+  @if $value == antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}

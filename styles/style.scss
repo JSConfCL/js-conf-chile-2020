@@ -1,0 +1,73 @@
+@import "variables.scss";
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  @include box-sizing(border-box);
+  box-sizing: border-box;
+}
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-drag: none;  
+}
+#__next {
+  height: 100%;
+}
+
+html, 
+body {
+  height: 100%;
+}
+
+body {
+  overflow: auto;
+  font-family: $circular;
+  letter-spacing: 0.05rem;
+  background: white;
+  text-rendering: optimizeLegibility;
+  @include font-smoothing($value: antialiased);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($black, .4); 
+  backdrop-filter: blur(3px);
+  pointer-events: none;
+  z-index: 8;
+  opacity: 0;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: 0.8s;
+  &.open {
+    opacity: 1;
+  }
+}
+.stripe {
+  width: 100%;
+  height: 50vh;
+  position: absolute;
+  background: white;
+  z-index: 3;
+  &.left {
+    left: 0;
+  }
+  &.top {
+    top: 0;
+  }
+  &.right {
+    right: 0;
+  }
+  &.bottom {
+    bottom: 0;
+  }
+}

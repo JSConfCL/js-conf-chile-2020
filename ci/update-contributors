@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+set -e
+set -o pipefail
+
+NEW_COMMIT_MESSAGE="[skip ci] Update contributors list (if was changed)."
+ALL_CONTRIBUTORS_SRC=$( \
+  curl -v https://api.github.com/repos/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/contributors \
+  | jq -rc \
+    --arg PROJECT_NAME $CIRCLE_PROJECT_REPONAME \
+    --arg PROJECT_OWNER $CIRCLE_PROJECT_USERNAME \
+    '{
+        "projectName": $PROJECT_NAME,
+        "projectOwner": $PROJECT_OWNER,
+        "repoType": "github",
+        "repoHost": "https://github.com",
+        "files": [
+          "README.md"
+        ],
+        "imageSize": 100,
+        "commit": true,
+        "contributors": [.[] |
+          {
+            "login": .login,
+            "name": .login,
+            "avatar_url": .avatar_url,
+            "profile": .html_url,
+            "contributions": [
+              "code"
+            ]
+          }
+        ]
+    }'
+)
+
+echo $ALL_CONTRIBUTORS_SRC > .all-contributorsrc
+
+npm run update-contributors
+
+git status
+git --no-pager diff
+git add .
+git diff-index --quiet HEAD || git commit -m "$NEW_COMMIT_MESSAGE"

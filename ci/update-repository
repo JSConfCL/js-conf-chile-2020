@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+set -e
+set -o pipefail
+
+. ci/shared-functions
+
+tag_repository() {
+    git checkout .
+
+    if [[ "$BUMP_VERSION_TYPE" == "PATCH" ]]; then
+        echo "auto semver patch."
+        npm version patch
+    elif [[ "$BUMP_VERSION_TYPE" == "MINOR" ]]; then
+        echo "auto semver minor."
+        npm version minor
+    fi
+
+    NEW_PACKAGE_VERSION=$(jq -r ".version" < package.json)
+    echo "=============================================================="
+    echo "package.json version: $NEW_PACKAGE_VERSION                    "
+    echo "package version target: $PACKAGE_VERSION_TARGET               "
+    echo "=============================================================="
+
+    git commit --amend -m "[skip ci] $NEW_PACKAGE_VERSION"
+}
+
+load_workspace_variables
+
+echo "============================================================="
+echo "          Updating contributors list                         "
+echo "============================================================="
+./ci/update-contributors
+
+if [[ "$BUMP_VERSION_TYPE" == "NOTSEMVER" ]]; then
+    #try to push if update contributors list were updated
+    git push origin ${CIRCLE_BRANCH}
+    skip_deployment
+else
+    tag_repository
+    echo "================================================================================"
+    echo "     Push repository if exists changes in contributors list and/or tag name     "
+    echo "================================================================================"
+    git push origin ${CIRCLE_BRANCH}
+    git push origin --tags
+fi
+
+tag_repository

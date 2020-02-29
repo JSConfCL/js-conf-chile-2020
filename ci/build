@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -e
+set -o pipefail
+
+. ci/shared-functions
+DIST_FOLDER="./dist"
+
+
+load_workspace_variables
+
+echo "============================================================="
+echo "          Building Artifact                                  "
+echo "============================================================="
+npm run build -- --prod
+
+
+echo "============================================================="
+echo "          Show directory dist                                "
+echo "============================================================="
+ls -lha $DIST_FOLDER
