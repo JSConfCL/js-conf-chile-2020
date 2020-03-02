@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="page-wrapper dark home"
+>
+  <div>
+    <div
+      className="stripe top"
+      style={
+        Object {
+          "transform": "none",
+          "transformOrigin": "50% 0% 0",
+        }
+      }
+    />
+    <div
+      className="stripe bottom"
+      style={
+        Object {
+          "transform": "none",
+          "transformOrigin": "50% 100% 0",
+        }
+      }
+    />
+  </div>
+  <div
+    className="content-wrapper"
+  >
+    <section
+      className="home flex align-center justify-end"
+      style={Object {}}
+    >
+      <div
+        className="text flex vertical align-center"
+      >
+        <h1>
+          JS Conf Chile
+        </h1>
+        <div
+          className="hello-there flex"
+        >
+          <div
+            className="hello-there flex"
+            overflow="hidden"
+            style={
+              Object {
+                "display": "flex",
+                "justifyContent": "center",
+              }
+            }
+            width="100%"
+          >
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              O
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              c
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              t
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              u
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              b
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              r
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              e
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+               
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              2
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              0
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              2
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              0
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="image"
+      >
+        <img
+          alt="Home"
+          onError={[Function]}
+          onLoad={[Function]}
+          src="/static/images/home/js_conf_amarillo.jpg"
+        />
+      </div>
+    </section>
+  </div>
+</div>
+`;

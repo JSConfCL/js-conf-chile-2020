@@ -1,0 +1,6 @@
+{
+  "name": "js-conf-chile-2020",
+  "type": "npm",
+  "forwardNpm": true,
+  "alias": ["js-conf-chile-2020-master-circleci.jsconfcl.now.sh"]
+}
