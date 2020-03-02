@@ -1,19 +1,22 @@
 @import "variables.scss";
 
 .home {
+  background-color: $yellow;
   color: white;
   width: 100vw;
   height: 100vh;
   position: relative;
   overflow: hidden;
+  
   .image {
-    width: 30%;
-    height: 30%;
+    width: 250px;
+    height: 250px;
     background: $black;
     position: absolute;
     bottom: 0;
     right: 0;
     margin: 0 5vw 2vh 0;
+
     img {
       position: absolute;
       z-index: 1;
@@ -25,148 +28,19 @@
   }
   .text {
     color: $black;
-    z-index: 1;
-    width: 42rem;
-    text-align: right;
-    padding-right: 8rem;
-    padding-bottom: 11rem;
-    position: relative;
-    .hello-there {
-      margin-bottom: 0.5rem;
-      overflow: hidden;
-       * {
-        font-size: 5rem;
-        height: 85px;
-      }
-    }
-    p {
-      font-size: 1.4em;
-      font-family: $circular;
-      &:nth-of-type(2) {
-        margin-top: 0.7rem;
-      }
-    }
+    padding-right: 5vw;
+    font-size: 1.5rem;
   }
 }
 @media (max-width: $desktop) {
-  .home {
-    .text {
-      max-width: 600px;
-      padding-right: 4.3rem;
-      padding-bottom: 9rem;
-      .hello-there {
-         * {
-          font-size: 4.4rem;
-          height: 72px;
-        }
-      }
-      p {
-        font-size: 1.4em;
-        &:nth-of-type(2) {
-          margin-top: 0.5rem;
-        }
-      }
-    }
-  }
 }
 @media (max-width: $tablet) {
-  .home {
-    .text {
-      max-width: 540px;
-      .hello-there {
-        * {
-         font-size: 4rem;
-         height: 66px;
-       }
-     }
-     p {
-       font-size: 1.3rem;;
-     }
-    }
-  }
 }
 @media (max-width: $small-tablet) {
-  .home {
-    .image {
-      img {
-        width: auto;
-        height: 100%;
-        bottom: 0;
-        right: 0;
-      }
-    }
-    .text {
-      width: 100%;
-      max-width: 512px;
-      padding: 0 3rem;
-      padding-bottom: 8rem;
-      .hello-there {
-        * {
-         font-size: 3.6rem;
-         height: 60px;
-       }
-     }
-      p {
-        font-size: 1.2rem;
-      }
-    }
-  }
 }
 
 @media (max-width: $phone) {
-  .home {
-    padding-bottom: 6rem;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    overflow-y: hidden;
-    position: fixed;
-    align-items: flex-start;
-    
-    .text {
-      align-self: flex-start;
-      margin-bottom: 6rem;
-      max-width: none;
-      padding: 0 30px;
-      .hello-there {
-        * {
-         font-size: 3rem;
-         height: 50px;
-       }
-     }
-      p {
-        font-size: 1rem;
-      }
-    }
-    .image {
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-      -ms-flex-align: center;
-      align-items: center;
-
-      img {
-        height: 150%;
-        left: -50px;
-        right: auto;
-      }
-    }
-  }
 }
 
 @media (max-width: $small-phone) {
-  .home {
-    .text {
-      margin-bottom: 4rem;
-      padding: 0 20px;
-      .hello-there {
-        margin-bottom: 6px;
-        * {
-         font-size: 2.8rem;
-         height: 46px;
-       }
-     }
-    }
-  }
 }

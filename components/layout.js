@@ -36,7 +36,7 @@ function Layout({ children, theme, style }) {
               scaleY: 0, originY: 0,
               transition: {
                 delay: 0.3,
-                duration: 0.7
+                duration: 0.5
               }
             }}
             exit={{ opacity: 1 }}
@@ -48,7 +48,7 @@ function Layout({ children, theme, style }) {
               scaleY: 0, originY: 1,
               transition: {
                 delay: 0.3,
-                duration: 0.7
+                duration: 0.5
               }
             }}
             exit={{ opacity: 1 }}

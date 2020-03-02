@@ -6,7 +6,7 @@ import { AppContext } from "@helpers/appContext";
 import "@styles/home.scss";
 
 // Create an array of letters
-const string = Array.from("JS Conf Chile 2020");
+const string = Array.from("Octubre 2020");
 
 // Add staggering effect to the children of the container
 const containerVariants = {
@@ -63,6 +63,7 @@ function Homepage(props) {
         className="home flex align-center justify-end"
       >
         <div className="text flex vertical align-center">
+          <h1>JS Conf Chile</h1>
           <div className="hello-there flex">
             <motion.div
               className="hello-there flex"
@@ -78,7 +79,7 @@ function Homepage(props) {
               animate={"after"}
             >
               {string.map((letter, index) => (
-                <motion.div
+                <motion.span
                   key={index}
                   width={"auto"} // Set the width to the width of the letter
                   background={""}
@@ -86,19 +87,15 @@ function Homepage(props) {
                   variants={letterVariants}
                 >
                   {letter === " " ? "\u00A0" : letter}
-                </motion.div>
+                </motion.span>
               ))}
             </motion.div>
           </div>
-          <p>
-            Pronto
-          </p>
-          <p>Octubre 2020</p>
         </div>
       
         <div className="image">
           <img
-            src="/static/images/home/JS.jpg"
+            src="/static/images/home/js_conf_amarillo.jpg"
             alt="Home"
             ref={imgRef}
             onLoad={handleImageLoaded}
