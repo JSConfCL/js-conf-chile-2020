@@ -49,12 +49,12 @@ jobs:
                 name: Deploy & Alias
                 command: |
                     if [ "${CIRCLE_BRANCH}" == "master" ]; then
-                        now --token $ZEIT_TOKEN --local-config .now/now.production.json
-                        now --token $ZEIT_TOKEN --local-config .now/now.production.json alias
+                        now --confirm --token $ZEIT_TOKEN --local-config .now/now.production.json
+                        now --confirm --token $ZEIT_TOKEN --local-config .now/now.production.json alias
                     else
                         ./.now/now.feature.sh
-                        now --token $ZEIT_TOKEN --local-config .now/now.feature.json
-                        now --token $ZEIT_TOKEN --local-config .now/now.feature.json alias
+                        now --confirm --token $ZEIT_TOKEN --local-config .now/now.feature.json
+                        now --confirm --token $ZEIT_TOKEN --local-config .now/now.feature.json alias
                     fi
 workflows:
     version: 2
