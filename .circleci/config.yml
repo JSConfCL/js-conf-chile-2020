@@ -60,12 +60,9 @@ workflows:
     test-deploy-purge:
         jobs:
             - checkout
-            # - unit-test:
-            #     requires:
-            #         - checkout
-            # - deploy:
-            #     requires:
-            #         - unit-test
-            - deploy:
+            - unit-test:
                 requires:
                     - checkout
+            - deploy:
+                requires:
+                    - unit-test
