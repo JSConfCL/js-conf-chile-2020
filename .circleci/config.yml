@@ -50,20 +50,19 @@ jobs:
                 command: |
                     if [ "${CIRCLE_BRANCH}" == "master" ]; then
                         now --confirm --token $ZEIT_TOKEN --local-config .now/now.production.json
-                        now --confirm --token $ZEIT_TOKEN --local-config .now/now.production.json alias
                     else
                         ./.now/now.feature.sh
                         now --confirm --token $ZEIT_TOKEN --local-config .now/now.feature.json
-                        now --confirm --token $ZEIT_TOKEN --local-config .now/now.feature.json alias
                     fi
 workflows:
     version: 2
     test-deploy-purge:
         jobs:
-            - checkout
-            - unit-test:
-                requires:
-                    - checkout
-            - deploy:
-                requires:
-                    - unit-test
+            # - checkout
+            # - unit-test:
+            #     requires:
+            #         - checkout
+            # - deploy:
+            #     requires:
+            #         - unit-test
+            - deploy
