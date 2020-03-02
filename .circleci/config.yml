@@ -51,6 +51,7 @@ jobs:
                     if [ "${CIRCLE_BRANCH}" == "master" ]; then
                         now --confirm --token $ZEIT_TOKEN --local-config .now/now.production.json
                     else
+                        ls -la
                         ./.now/now.feature.sh
                         now --confirm --token $ZEIT_TOKEN --local-config .now/now.feature.json
                     fi
@@ -58,11 +59,13 @@ workflows:
     version: 2
     test-deploy-purge:
         jobs:
-            # - checkout
+            - checkout
             # - unit-test:
             #     requires:
             #         - checkout
             # - deploy:
             #     requires:
             #         - unit-test
-            - deploy
+            - deploy:
+                requires:
+                    - checkout
