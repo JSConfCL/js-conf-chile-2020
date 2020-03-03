@@ -27,21 +27,23 @@ exports[`renders correctly 1`] = `
   <div
     className="content-wrapper"
   >
-    <section
-      className="home flex align-center justify-end"
-      style={Object {}}
-    >
+    <section>
+      <img
+        alt="Mapa de Chile"
+        id="map"
+        src="/static/images/home/mapa_chile.svg"
+      />
       <div
-        className="text flex vertical align-center"
+        className="text"
       >
         <h1>
-          JS Conf Chile
+          JS Conf Chile 2020
         </h1>
         <div
-          className="hello-there flex"
+          className="hello-there"
         >
           <div
-            className="hello-there flex"
+            className="hello-there"
             overflow="hidden"
             style={
               Object {
@@ -60,51 +62,7 @@ exports[`renders correctly 1`] = `
               }
               width="auto"
             >
-              O
-            </span>
-            <span
-              style={
-                Object {
-                  "position": "relative",
-                  "transform": "translateY(20px) translateZ(0)",
-                }
-              }
-              width="auto"
-            >
-              c
-            </span>
-            <span
-              style={
-                Object {
-                  "position": "relative",
-                  "transform": "translateY(20px) translateZ(0)",
-                }
-              }
-              width="auto"
-            >
-              t
-            </span>
-            <span
-              style={
-                Object {
-                  "position": "relative",
-                  "transform": "translateY(20px) translateZ(0)",
-                }
-              }
-              width="auto"
-            >
-              u
-            </span>
-            <span
-              style={
-                Object {
-                  "position": "relative",
-                  "transform": "translateY(20px) translateZ(0)",
-                }
-              }
-              width="auto"
-            >
-              b
+              P
             </span>
             <span
               style={
@@ -126,7 +84,7 @@ exports[`renders correctly 1`] = `
               }
               width="auto"
             >
-              e
+              o
             </span>
             <span
               style={
@@ -137,7 +95,7 @@ exports[`renders correctly 1`] = `
               }
               width="auto"
             >
-               
+              n
             </span>
             <span
               style={
@@ -148,7 +106,7 @@ exports[`renders correctly 1`] = `
               }
               width="auto"
             >
-              2
+              t
             </span>
             <span
               style={
@@ -159,7 +117,7 @@ exports[`renders correctly 1`] = `
               }
               width="auto"
             >
-              0
+              o
             </span>
             <span
               style={
@@ -170,7 +128,7 @@ exports[`renders correctly 1`] = `
               }
               width="auto"
             >
-              2
+              .
             </span>
             <span
               style={
@@ -181,7 +139,18 @@ exports[`renders correctly 1`] = `
               }
               width="auto"
             >
-              0
+              .
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              .
             </span>
           </div>
         </div>
@@ -190,7 +159,7 @@ exports[`renders correctly 1`] = `
         className="image"
       >
         <img
-          alt="Home"
+          alt="Logo JS Conf Chile 2020"
           onError={[Function]}
           onLoad={[Function]}
           src="/static/images/home/js_conf_amarillo.jpg"
