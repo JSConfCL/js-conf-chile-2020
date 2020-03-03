@@ -8,28 +8,41 @@
   position: relative;
   overflow: hidden;
   
-  .image {
-    width: 250px;
-    height: 250px;
-    background: $black;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 0 5vw 2vh 0;
-
-    img {
-      position: absolute;
-      z-index: 1;
-      margin: auto;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-    }
+  #map {
+    position: fixed;
+    height: 90vh;
+    left: 0;
+    bottom: 2vh;
   }
-  .text {
-    color: $black;
-    padding-right: 5vw;
-    font-size: 1.5rem;
+
+  section {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 2vw;
+
+    .image {
+      width: 250px;
+      height: 250px;
+      margin: 0 5vw 2vh 0;
+  
+      img {
+        z-index: 1;
+        margin: auto;
+        width: 100%;
+      }
+    }
+    .text {
+      color: $black;
+      font-size: 1.5rem;
+
+      h1 {
+        padding-right: 2vw;
+        text-align: end;
+      }
+    }
   }
 }
 @media (max-width: $desktop) {
@@ -40,6 +53,23 @@
 }
 
 @media (max-width: $phone) {
+  .home {
+    section {
+      padding-right: 0;
+
+      .image {
+        width: 200px;
+        height: 200px;
+      }
+      .text {
+        width: 60vw;
+
+        h1 {
+          padding-right: 8vw;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: $small-phone) {
