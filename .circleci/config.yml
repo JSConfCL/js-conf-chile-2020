@@ -1,7 +1,7 @@
 defaults: &defaults
     docker:
         - image: circleci/node:12
-    working_directory: ~/tmp/circlci-now
+    working_directory: ~/tmp/js-conf-chile-2020
 
 version: 2
 jobs:
@@ -10,7 +10,7 @@ jobs:
         steps:
             - checkout
             - attach_workspace:
-                at: ~/tmp/circlci-now
+                at: ~/tmp/js-conf-chile-2020
             - restore_cache:
                 keys:
                     - npm-cache-{{ .Branch }}-{{ checksum "package.json" }}
@@ -30,7 +30,7 @@ jobs:
         <<: *defaults
         steps:
             - attach_workspace:
-                at: ~/tmp/circlci-now
+                at: ~/tmp/js-conf-chile-2020
             - run:
                 name: NPM Install
                 command: npm install
@@ -41,20 +41,14 @@ jobs:
         <<: *defaults
         steps:
             - attach_workspace:
-                at: ~/tmp/circlci-now
+                at: ~/tmp/js-conf-chile-2020
             - run:
                 name: Install Now CLI
                 command: sudo npm install --global --unsafe-perm now
             - deploy:
                 name: Deploy & Alias
                 command: |
-                    if [ "${CIRCLE_BRANCH}" == "master" ]; then
-                        now --confirm --token $ZEIT_TOKEN --local-config .now/now.production.json
-                    else
-                        ls -la
-                        ./.now/now.feature.sh
-                        now --confirm --token $ZEIT_TOKEN --local-config .now/now.feature.json
-                    fi
+                    now --confirm --token $ZEIT_TOKEN
 workflows:
     version: 2
     test-deploy-purge:
@@ -63,6 +57,6 @@ workflows:
             - unit-test:
                 requires:
                     - checkout
-            - deploy:
-                requires:
-                    - unit-test
+            # - deploy:
+            #     requires:
+            #         - unit-test
