@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="page-wrapper dark home"
+>
+  <div>
+    <div
+      className="stripe top"
+      style={
+        Object {
+          "transform": "none",
+          "transformOrigin": "50% 0% 0",
+        }
+      }
+    />
+    <div
+      className="stripe bottom"
+      style={
+        Object {
+          "transform": "none",
+          "transformOrigin": "50% 100% 0",
+        }
+      }
+    />
+  </div>
+  <div
+    className="content-wrapper"
+  >
+    <section>
+      <img
+        alt="Mapa de Chile"
+        id="map"
+        src="/static/images/home/mapa_chile.svg"
+      />
+      <div
+        className="text"
+      >
+        <h1>
+          JS Conf Chile 2020
+        </h1>
+        <div
+          className="hello-there"
+        >
+          <div
+            className="hello-there"
+            overflow="hidden"
+            style={
+              Object {
+                "display": "flex",
+                "justifyContent": "center",
+              }
+            }
+            width="100%"
+          >
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              P
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              r
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              o
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              n
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              t
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              o
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              .
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              .
+            </span>
+            <span
+              style={
+                Object {
+                  "position": "relative",
+                  "transform": "translateY(20px) translateZ(0)",
+                }
+              }
+              width="auto"
+            >
+              .
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="image"
+      >
+        <img
+          alt="Logo JS Conf Chile 2020"
+          onError={[Function]}
+          onLoad={[Function]}
+          src="/static/images/home/js_conf_amarillo.jpg"
+        />
+      </div>
+    </section>
+  </div>
+</div>
+`;

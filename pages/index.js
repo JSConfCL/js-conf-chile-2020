@@ -1,4 +1,4 @@
-import { useEffect, useRef, useContext } from "react";
+import React, { useEffect, useRef, useContext } from "react";
 import { motion } from "framer-motion";
 import Layout from "@components/layout";
 import { AppContext } from "@helpers/appContext";
@@ -6,7 +6,7 @@ import { AppContext } from "@helpers/appContext";
 import "@styles/home.scss";
 
 // Create an array of letters
-const string = Array.from("JS Conf Chile 2020");
+const string = Array.from("Pronto...");
 
 // Add staggering effect to the children of the container
 const containerVariants = {
@@ -56,16 +56,17 @@ function Homepage(props) {
 
   return (
     <Layout theme="dark home">
-      <motion.section
-        initial="initial"
-        animate="animate"
-        exit={{ opacity: 0 }}
-        className="home flex align-center justify-end"
-      >
-        <div className="text flex vertical align-center">
-          <div className="hello-there flex">
+      <section>
+        <img
+          id="map"
+          src="/static/images/home/mapa_chile.svg"
+          alt="Mapa de Chile"
+        />
+        <div className="text">
+          <h1>JS Conf Chile 2020</h1>
+          <div className="hello-there">
             <motion.div
-              className="hello-there flex"
+              className="hello-there"
               width={"100%"}
               overflow={"hidden"}
               background={""}
@@ -76,9 +77,10 @@ function Homepage(props) {
               variants={containerVariants}
               initial={"before"}
               animate={"after"}
+              exit="exit"
             >
               {string.map((letter, index) => (
-                <motion.div
+                <motion.span
                   key={index}
                   width={"auto"} // Set the width to the width of the letter
                   background={""}
@@ -86,26 +88,22 @@ function Homepage(props) {
                   variants={letterVariants}
                 >
                   {letter === " " ? "\u00A0" : letter}
-                </motion.div>
+                </motion.span>
               ))}
             </motion.div>
           </div>
-          <p>
-            Pronto
-          </p>
-          <p>Octubre 2020</p>
         </div>
       
         <div className="image">
           <img
-            src="/static/images/home/JS.jpg"
-            alt="Home"
+            src="/static/images/home/js_conf_amarillo.jpg"
+            alt="Logo JS Conf Chile 2020"
             ref={imgRef}
             onLoad={handleImageLoaded}
             onError={handleImageLoaded}
           />
         </div>
-        </motion.section>
+      </section>
     </Layout>
   );
 }
