@@ -40,17 +40,17 @@ export default function Loader() {
         exit={{ opacity: 0 }}
       >
         <motion.span
-          class="circle"
+          className="circle"
           variants={loadingCircleVariants}
           transition={loadingCircleTransition}
         />
         <motion.span
-          class="circle"
+          className="circle"
           variants={loadingCircleVariants}
           transition={loadingCircleTransition}
         />
         <motion.span
-          class="circle"
+          className="circle"
           variants={loadingCircleVariants}
           transition={loadingCircleTransition}
         />

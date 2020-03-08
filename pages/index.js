@@ -6,8 +6,7 @@ import { AppContext } from "@helpers/appContext";
 import "@styles/home.scss";
 
 // Create an array of letters
-const string = Array.from("Pronto...");
-
+const string = Array.from("22 - 23 Octubre");
 // Add staggering effect to the children of the container
 const containerVariants = {
   before: {},
@@ -17,8 +16,7 @@ const containerVariants = {
       delayChildren: 0.2
     } 
   },
-}
-  
+};
 // Variants for animating each letter
 const letterVariants = {
   before: {
@@ -62,8 +60,17 @@ function Homepage(props) {
           src="/static/images/home/mapa_chile.svg"
           alt="Mapa de Chile"
         />
+        <div className="image">
+          <img
+            src="/static/images/home/js_conf_amarillo.jpg"
+            alt="Logo JS Conf Chile 2020"
+            ref={imgRef}
+            onLoad={handleImageLoaded}
+            onError={handleImageLoaded}
+          />
+        </div>
         <div className="text">
-          <h1>JS Conf Chile 2020</h1>
+          <h1>JSCONF<span>CL</span></h1>
           <div className="hello-there">
             <motion.div
               className="hello-there"
@@ -93,15 +100,19 @@ function Homepage(props) {
             </motion.div>
           </div>
         </div>
-      
-        <div className="image">
-          <img
-            src="/static/images/home/js_conf_amarillo.jpg"
-            alt="Logo JS Conf Chile 2020"
-            ref={imgRef}
-            onLoad={handleImageLoaded}
-            onError={handleImageLoaded}
-          />
+        <div className="subscribe-form">
+          <p>Entérate de todas nuestras novedades y avances!</p>
+          <p>(Descuida: detestamos tanto el spam como tú)</p>
+          <form className="input">
+            <input type="text" name="email-input" id="email"/>
+            <button type="submit">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20">
+                  <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
+              </svg>
+            </button>
+          </form>
         </div>
       </section>
     </Layout>

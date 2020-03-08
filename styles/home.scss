@@ -2,12 +2,19 @@
 
 .home {
   background-color: $yellow;
-  color: white;
   width: 100vw;
   height: 100vh;
   position: relative;
   overflow: hidden;
   
+  h1 {
+    font-weight: inherit;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
   #map {
     position: fixed;
     height: 90vh;
@@ -20,13 +27,13 @@
     flex-flow: column nowrap;
     height: 100%;
     justify-content: flex-end;
-    align-items: flex-end;
-    padding-right: 2vw;
+    align-items: center;
+    padding: 0 0 20vh;
 
     .image {
       width: 250px;
       height: 250px;
-      margin: 0 5vw 2vh 0;
+      margin: 0 0 2vh 0;
   
       img {
         z-index: 1;
@@ -43,6 +50,45 @@
         text-align: end;
       }
     }
+    .subscribe-form {
+      display: flex;
+      flex-direction: column;
+      align-content: flex-end;
+      margin-top: 6vh;
+
+      p {
+        text-align: right;
+        padding-right: 2vw;
+      }
+      
+      .input {
+        align-content: flex-end;
+        display: flex;
+        justify-content: flex-end;
+        padding: 3vh 2vw;
+        
+        input {
+          width: 30vw;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+          padding-left: 5px;
+        }
+        button {
+          border: none;
+          background: $black;
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+          width: 5vw;
+          cursor: pointer;
+  
+          svg {
+            width: 30px;
+            height: 20px;
+            fill: $yellow;
+          }
+        }
+      }
+    }
   }
 }
 @media (max-width: $desktop) {
@@ -56,6 +102,7 @@
   .home {
     section {
       padding-right: 0;
+      align-items: flex-end;
 
       .image {
         width: 200px;
@@ -66,6 +113,17 @@
 
         h1 {
           padding-right: 8vw;
+        }
+      }
+      .subscribe-form {
+        width: 60vw;
+        .input {
+          input {
+            width: 60vw;
+          }
+          button {
+            width: 15vw;
+          }
         }
       }
     }
