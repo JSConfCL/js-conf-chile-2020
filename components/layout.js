@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
+
+import Loader  from "@components/loader";
 import { AppContext } from "@helpers/appContext";
 
 function Layout({ children, theme, style }) {
@@ -13,21 +15,7 @@ function Layout({ children, theme, style }) {
   return (
     <div className={`page-wrapper ${theme}`} style={style}>
 
-      { isLoaderOpen && (
-        <div className="app-loader">
-          <motion.div
-            className="loader"
-            animate={{ scale: 0.5, rotate: 180, opacity: 0.5 }}
-            exit={{ opacity: 0 }}
-            transition={{
-              yoyo: Infinity,
-              duration: 1,
-              ease: "easeInOut"
-            }}
-          />
-        </div>
-      )}
-
+      { isLoaderOpen && <Loader />}
       { !isLoaderOpen && (
         <div>
           <motion.div
