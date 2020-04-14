@@ -35,57 +35,34 @@ const letterVariants = {
 };
 
 function Welcome() {
-  // const imgRef = React.useRef(null);
-
-  // const handleImageLoaded = () => {
-  //   if (isLoaderOpen) {
-  //     closeLoader();
-  //   }
-  // };
-
-  // React.useEffect(() => {
-  //   if (imgRef.current?.complete) {
-  //     closeLoader();
-  //   }
-  // }, []);
   return (
     <div className={style.wrapper}>
-      <div className={style.image}>
+      <div className={style.imageContainer}>
         <img
           src="/static/images/home/js_conf_amarillo.jpg"
           alt="Logo JS Conf Chile 2020"
-          // ref={imgRef}
-          // onLoad={handleImageLoaded}
-          // onError={handleImageLoaded}
         />
       </div>
       <div className={style.text}>
         <h1>
           JSCONF<span>CL</span>
         </h1>
-        <div className="hello-there">
+        <div>
           <motion.div
-            className="hello-there"
+            className={style.helloThere}
             width={"100%"}
             overflow={"hidden"}
             background={""}
-            style={{
-              display: "flex", // Set the display value to flex
-              justifyContent: "center", // Center all children elements on the x axis
-            }}
             variants={containerVariants}
             initial={"before"}
             animate={"after"}
             exit="exit"
+            transition={{
+              delayChildren: 0.6,
+            }}
           >
             {string.map((letter, index) => (
-              <motion.span
-                key={index}
-                width={"auto"} // Set the width to the width of the letter
-                background={""}
-                style={{ position: "relative" }} // Position elements
-                variants={letterVariants}
-              >
+              <motion.span key={index} variants={letterVariants}>
                 {letter === " " ? "\u00A0" : letter}
               </motion.span>
             ))}

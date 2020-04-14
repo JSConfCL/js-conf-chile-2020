@@ -3,6 +3,7 @@ import Head from "next/head";
 import Layout from "@components/Layout";
 import SubscribeForm from "@components/SubscribeForm";
 import Welcome from "@components/Welcome";
+import styles from "./home.module.scss";
 
 const imagesToPreload = [
   "/static/images/home/js_conf_amarillo.jpg",
@@ -20,7 +21,7 @@ function Homepage() {
     setTimeout(() => setIsReady(true), 500);
   }, []);
   return (
-    <React.Fragment>
+    <div>
       <Head>
         <title>JSCONFCL</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -30,15 +31,21 @@ function Homepage() {
         />
       </Head>
       <Layout isReady={isReady}>
-        <section className="home">
-          <div className="map">
-            <img src="/static/images/home/mapa_chile.svg" alt="Mapa de Chile" />
+        <section className={styles.home}>
+          <div className={styles.blur}>
+            <img
+              className={styles.mapImage}
+              src="/static/images/home/mapa_chile.svg"
+              alt="Mapa de Chile"
+            />
           </div>
-          <Welcome />
-          <SubscribeForm />
+          <div className={styles.contentContainer}>
+            <Welcome />
+            <SubscribeForm />
+          </div>
         </section>
       </Layout>
-    </React.Fragment>
+    </div>
   );
 }
 

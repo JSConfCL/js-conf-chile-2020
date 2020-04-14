@@ -6,15 +6,20 @@
   flex-direction: column;
 }
 
-.image {
-  width: 250px;
-  height: 250px;
-  margin: 0 0 2vh 0;
+.imageContainer {
+  width: 400px;
+  max-width: 90%;
 
   img {
     z-index: 1;
     margin: auto;
     width: 100%;
+  }
+}
+
+@media (max-width: $desktop) {
+  .imageContainer {
+    width: 350px;
   }
 }
 
@@ -25,4 +30,9 @@
   h1 {
     text-align: center;
   }
+}
+
+.helloThere {
+  display: flex;
+  justify-content: center;
 }
