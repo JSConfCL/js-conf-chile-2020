@@ -7,19 +7,13 @@
 }
 
 .imageContainer {
-  width: 400px;
-  max-width: 90%;
+  width: 90%;
+  max-width: 400px;
 
   img {
     z-index: 1;
     margin: auto;
     width: 100%;
-  }
-}
-
-@media (max-width: $desktop) {
-  .imageContainer {
-    width: 350px;
   }
 }
 
@@ -29,6 +23,9 @@
 
   h1 {
     text-align: center;
+    span {
+      font-weight: bold;
+    }
   }
 }
 

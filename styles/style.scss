@@ -30,6 +30,7 @@ body {
   font-family: $montserrat;
   letter-spacing: 0.05rem;
   background: $yellow;
+  color: $black;
   text-rendering: optimizeLegibility;
   @include font-smoothing($value: antialiased);
   -webkit-font-smoothing: antialiased;
