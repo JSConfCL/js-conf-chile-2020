@@ -9,13 +9,13 @@
   display: flex;
 }
 
-.blur {
-  opacity: 0.85;
-  filter: blur(3px);
+.mapImageWrapper {
+  opacity: 0.75;
   height: 100%;
   left: 0;
   flex-shrink: 0;
 }
+
 .mapImage {
   height: 100%;
 }

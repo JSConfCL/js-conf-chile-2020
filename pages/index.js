@@ -33,7 +33,7 @@ function Homepage() {
       </Head>
       <Layout isReady={isReady}>
         <section className={styles.home}>
-          <div className={styles.blur}>
+          <div className={styles.mapImageWrapper}>
             <img
               className={styles.mapImage}
               src="/static/images/home/mapa_chile.svg"
