@@ -1,62 +1,74 @@
 defaults: &defaults
-    docker:
-        - image: circleci/node:12
-    working_directory: ~/tmp/js-conf-chile-2020
+  docker:
+    - image: circleci/node:12
+  working_directory: ~/tmp/js-conf-chile-2020
 
 version: 2
 jobs:
-    checkout:
-        <<: *defaults
-        steps:
-            - checkout
-            - attach_workspace:
-                at: ~/tmp/js-conf-chile-2020
-            - restore_cache:
-                keys:
-                    - npm-cache-{{ .Branch }}-{{ checksum "package.json" }}
-                    - npm-cache-{{ .Branch }}
-                    - npm-cache-
-            - run:
-                name: NPM Install
-                command: npm install
-            - save_cache:
-                key: npm-cache-{{ .Branch }}-{{ checksum "package.json" }}
-                paths:
-                    - node_modules
-            - persist_to_workspace:
-                root: .
-                paths: .
-    unit-test:
-        <<: *defaults
-        steps:
-            - attach_workspace:
-                at: ~/tmp/js-conf-chile-2020
-            - run:
-                name: NPM Install
-                command: npm install
-            - run:
-                name: Unit Test
-                command: npm test
-    deploy:
-        <<: *defaults
-        steps:
-            - attach_workspace:
-                at: ~/tmp/js-conf-chile-2020
-            - run:
-                name: Install Now CLI
-                command: sudo npm install --global --unsafe-perm now
-            - deploy:
-                name: Deploy & Alias
-                command: |
-                    now --confirm --token $ZEIT_TOKEN
+  checkout:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/tmp/js-conf-chile-2020
+      - restore_cache:
+          keys:
+            - npm-cache-{{ .Branch }}-{{ checksum "package.json" }}
+            - npm-cache-{{ .Branch }}
+            - npm-cache-
+      - run:
+          name: NPM Install
+          command: npm ci
+      - save_cache:
+          key: npm-cache-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - persist_to_workspace:
+          root: .
+          paths: .
+
+  lint:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/tmp/js-conf-chile-2020
+      - run:
+          name: Lint
+          command: npm run lint
+  unit-test:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/tmp/js-conf-chile-2020
+      - run:
+          name: NPM Install
+          command: npm install
+      - run:
+          name: Unit Test
+          command: npm test
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/tmp/js-conf-chile-2020
+      - run:
+          name: Install Now CLI
+          command: sudo npm install --global --unsafe-perm now
+      - deploy:
+          name: Deploy & Alias
+          command: |
+            now --confirm --token $ZEIT_TOKEN
 workflows:
-    version: 2
-    test-deploy-purge:
-        jobs:
+  version: 2
+  test-deploy-purge:
+    jobs:
+      - checkout
+      - lint:
+          requires:
             - checkout
-            - unit-test:
-                requires:
-                    - checkout
-            # - deploy:
-            #     requires:
-            #         - unit-test
+      - unit-test:
+          requires:
+            - checkout
+      # - deploy:
+      #     requires:
+      #         - unit-test
