@@ -17,7 +17,8 @@ hgroup,
 nav,
 section,
 summary {
-  display: block; }
+  display: block;
+}
 
 /*
  * Corrects `inline-block` display not defined in IE 8/9.
@@ -26,7 +27,8 @@ summary {
 audio,
 canvas,
 video {
-  display: inline-block; }
+  display: inline-block;
+}
 
 /*
  * Prevents modern browsers from displaying `audio` without controls.
@@ -35,14 +37,16 @@ video {
 /* line 41, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 audio:not([controls]) {
   display: none;
-  height: 0; }
+  height: 0;
+}
 
 /*
  * Addresses styling for `hidden` attribute not present in IE 8/9.
  */
 /* line 50, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 [hidden] {
-  display: none; }
+  display: none;
+}
 
 /* ==========================================================================
    Base
@@ -59,14 +63,16 @@ html {
   -webkit-text-size-adjust: 100%;
   /* 2 */
   -ms-text-size-adjust: 100%;
-  /* 2 */ }
+  /* 2 */
+}
 
 /*
  * Removes default margin.
  */
 /* line 74, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 body {
-  margin: 0; }
+  margin: 0;
+}
 
 /* ==========================================================================
    Links
@@ -76,7 +82,8 @@ body {
  */
 /* line 86, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 a:focus {
-  outline: thin dotted; }
+  outline: thin dotted;
+}
 
 /*
  * Improves readability when focused and also mouse hovered in all browsers.
@@ -84,7 +91,8 @@ a:focus {
 /* line 94, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 a:active,
 a:hover {
-  outline: 0; }
+  outline: 0;
+}
 
 /* ==========================================================================
    Typography
@@ -95,14 +103,16 @@ a:hover {
  */
 /* line 108, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 h1 {
-  font-size: 2em; }
+  font-size: 2em;
+}
 
 /*
  * Addresses styling not present in IE 8/9, Safari 5, and Chrome.
  */
 /* line 116, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 abbr[title] {
-  border-bottom: 1px dotted; }
+  border-bottom: 1px dotted;
+}
 
 /*
  * Addresses style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
@@ -110,14 +120,16 @@ abbr[title] {
 /* line 124, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 b,
 strong {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 /*
  * Addresses styling not present in Safari 5 and Chrome.
  */
 /* line 133, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 dfn {
-  font-style: italic; }
+  font-style: italic;
+}
 
 /*
  * Addresses styling not present in IE 8/9.
@@ -125,7 +137,8 @@ dfn {
 /* line 141, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 mark {
   background: #ff0;
-  color: #000; }
+  color: #000;
+}
 
 /*
  * Corrects font family set oddly in Safari 5 and Chrome.
@@ -136,7 +149,8 @@ kbd,
 pre,
 samp {
   font-family: monospace, serif;
-  font-size: 1em; }
+  font-size: 1em;
+}
 
 /*
  * Improves readability of pre-formatted text in all browsers.
@@ -145,21 +159,24 @@ samp {
 pre {
   white-space: pre;
   white-space: pre-wrap;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+}
 
 /*
  * Sets consistent quote types.
  */
 /* line 173, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 q {
-  quotes: "\201C" "\201D" "\2018" "\2019"; }
+  quotes: "\201C""\201D""\2018""\2019";
+}
 
 /*
  * Addresses inconsistent and variable font size in all browsers.
  */
 /* line 181, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 small {
-  font-size: 80%; }
+  font-size: 80%;
+}
 
 /*
  * Prevents `sub` and `sup` affecting `line-height` in all browsers.
@@ -170,15 +187,18 @@ sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 /* line 197, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 sup {
-  top: -0.5em; }
+  top: -0.5em;
+}
 
 /* line 201, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 sub {
-  bottom: -0.25em; }
+  bottom: -0.25em;
+}
 
 /* ==========================================================================
    Embedded content
@@ -188,14 +208,16 @@ sub {
  */
 /* line 213, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 img {
-  border: 0; }
+  border: 0;
+}
 
 /*
  * Corrects overflow displayed oddly in IE 9.
  */
 /* line 221, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 svg:not(:root) {
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 /* ==========================================================================
    Figures
@@ -205,7 +227,8 @@ svg:not(:root) {
  */
 /* line 233, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 figure {
-  margin: 0; }
+  margin: 0;
+}
 
 /* ==========================================================================
    Forms
@@ -217,7 +240,8 @@ figure {
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em; }
+  padding: 0.35em 0.625em 0.75em;
+}
 
 /*
  * 1. Corrects color not being inherited in IE 8/9.
@@ -228,7 +252,8 @@ legend {
   border: 0;
   /* 1 */
   padding: 0;
-  /* 2 */ }
+  /* 2 */
+}
 
 /*
  * 1. Corrects font family not being inherited in all browsers.
@@ -245,7 +270,8 @@ textarea {
   font-size: 100%;
   /* 2 */
   margin: 0;
-  /* 3 */ }
+  /* 3 */
+}
 
 /*
  * Addresses Firefox 4+ setting `line-height` on `input` using `!important` in
@@ -254,7 +280,8 @@ textarea {
 /* line 281, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 button,
 input {
-  line-height: normal; }
+  line-height: normal;
+}
 
 /*
  * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
@@ -271,7 +298,8 @@ input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
-  /* 3 */ }
+  /* 3 */
+}
 
 /*
  * Re-set default cursor for disabled elements.
@@ -279,7 +307,8 @@ input[type="submit"] {
 /* line 306, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 button[disabled],
 input[disabled] {
-  cursor: default; }
+  cursor: default;
+}
 
 /*
  * 1. Addresses box sizing set to `content-box` in IE 8/9.
@@ -291,7 +320,8 @@ input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
-  /* 2 */ }
+  /* 2 */
+}
 
 /*
  * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
@@ -305,7 +335,8 @@ input[type="search"] {
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   /* 2 */
-  box-sizing: content-box; }
+  box-sizing: content-box;
+}
 
 /*
  * Removes inner padding and search cancel button in Safari 5 and Chrome
@@ -314,7 +345,8 @@ input[type="search"] {
 /* line 340, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+}
 
 /*
  * Removes inner padding and border in Firefox 4+.
@@ -323,7 +355,8 @@ input[type="search"]::-webkit-search-decoration {
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 /*
  * 1. Removes default vertical scrollbar in IE 8/9.
@@ -334,7 +367,8 @@ textarea {
   overflow: auto;
   /* 1 */
   vertical-align: top;
-  /* 2 */ }
+  /* 2 */
+}
 
 /* ==========================================================================
    Tables
@@ -345,4 +379,5 @@ textarea {
 /* line 373, /Users/miguelperez/Sites/csstricks/source/stylesheets/normalize.css.scss */
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
