@@ -6,15 +6,15 @@ import { AppContext } from "@helpers/appContext";
 import "@styles/home.scss";
 
 // Create an array of letters
-const string = Array.from("22 - 23 Octubre");
+const string = Array.from("2021");
 // Add staggering effect to the children of the container
 const containerVariants = {
   before: {},
-  after: { 
+  after: {
     transition: {
       staggerChildren: 0.04,
-      delayChildren: 0.2
-    } 
+      delayChildren: 0.2,
+    },
   },
 };
 // Variants for animating each letter
@@ -24,17 +24,17 @@ const letterVariants = {
     transition: {
       type: "spring",
       damping: 16,
-      stiffness: 150
-    }
+      stiffness: 150,
+    },
   },
   after: {
     y: 0,
     transition: {
       type: "spring",
       damping: 16,
-      stiffness: 150
-    }
-  }
+      stiffness: 150,
+    },
+  },
 };
 
 function Homepage(props) {
@@ -50,7 +50,7 @@ function Homepage(props) {
     if (imgRef.current?.complete) {
       closeLoader();
     }
-  }, [])
+  }, []);
 
   return (
     <Layout theme="dark home">
@@ -70,7 +70,9 @@ function Homepage(props) {
           />
         </div>
         <div className="text">
-          <h1>JSCONF<span>CL</span></h1>
+          <h1>
+            JSCONF<span>CL</span>
+          </h1>
           <div className="hello-there">
             <motion.div
               className="hello-there"
@@ -79,7 +81,7 @@ function Homepage(props) {
               background={""}
               style={{
                 display: "flex", // Set the display value to flex
-                justifyContent: "center" // Center all children elements on the x axis
+                justifyContent: "center", // Center all children elements on the x axis
               }}
               variants={containerVariants}
               initial={"before"}
@@ -102,14 +104,12 @@ function Homepage(props) {
         </div>
         <div className="subscribe-form">
           <p>Entérate de todas nuestras novedades y avances!</p>
-          <p>(Descuida: detestamos tanto el spam como tú)</p>
+          <p>(Descuida: detestamos el spam tanto como tú)</p>
           <form className="input">
-            <input type="text" name="email-input" id="email"/>
-            <button type="submit">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20">
-                  <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
+            <input type="text" placeholder="email" name="email-input" id="email" />
+            <button type="submit" aria-label="suscribe">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
               </svg>
             </button>
           </form>

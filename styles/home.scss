@@ -6,7 +6,7 @@
   height: 100vh;
   position: relative;
   overflow: hidden;
-  
+
   h1 {
     font-weight: inherit;
 
@@ -17,7 +17,7 @@
 
   #map {
     position: fixed;
-    height: 90vh;
+    height: 100vh;
     left: 0;
     bottom: 2vh;
   }
@@ -34,7 +34,7 @@
       width: 250px;
       height: 250px;
       margin: 0 0 2vh 0;
-  
+
       img {
         z-index: 1;
         margin: auto;
@@ -46,8 +46,7 @@
       font-size: 1.5rem;
 
       h1 {
-        padding-right: 2vw;
-        text-align: end;
+        text-align: center;
       }
     }
     .subscribe-form {
@@ -57,30 +56,30 @@
       margin-top: 6vh;
 
       p {
-        text-align: right;
-        padding-right: 2vw;
+        text-align: center;
       }
-      
       .input {
         align-content: flex-end;
         display: flex;
         justify-content: flex-end;
-        padding: 3vh 2vw;
-        
+        padding: 3vh 1vw;
+
         input {
-          width: 30vw;
-          border-top-left-radius: 10px;
-          border-bottom-left-radius: 10px;
-          padding-left: 5px;
+          width: 80%;
+          padding: 1vh 1vw;
+          font-size: 1.5rem;
+          border: 2px solid $black;
+          ::placeholder {
+            color: $grey;
+          }
         }
         button {
           border: none;
           background: $black;
-          border-top-right-radius: 10px;
-          border-bottom-right-radius: 10px;
           width: 5vw;
+          flex: auto;
           cursor: pointer;
-  
+
           svg {
             width: 30px;
             height: 20px;
@@ -94,6 +93,11 @@
 @media (max-width: $desktop) {
 }
 @media (max-width: $tablet) {
+  .home {
+    #map {
+      display: none;
+    }
+  }
 }
 @media (max-width: $small-tablet) {
 }
@@ -102,7 +106,6 @@
   .home {
     section {
       padding-right: 0;
-      align-items: flex-end;
 
       .image {
         width: 200px;
@@ -110,21 +113,6 @@
       }
       .text {
         width: 60vw;
-
-        h1 {
-          padding-right: 8vw;
-        }
-      }
-      .subscribe-form {
-        width: 60vw;
-        .input {
-          input {
-            width: 60vw;
-          }
-          button {
-            width: 15vw;
-          }
-        }
       }
     }
   }
