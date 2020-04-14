@@ -16,6 +16,12 @@
   flex-shrink: 0;
 }
 
+@media (max-width: $tablet) {
+  .mapImageWrapper {
+    display: none;
+  }
+}
+
 .mapImage {
   height: 100%;
 }
