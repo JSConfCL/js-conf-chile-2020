@@ -1,0 +1,41 @@
+@import "../../styles/variables.scss";
+
+.subscribeForm {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  margin-top: 6vh;
+
+  p {
+    text-align: center;
+  }
+}
+.input {
+  display: flex;
+  align-content: flex-end;
+  justify-content: flex-end;
+  padding: 3vh 1vw;
+
+  input {
+    width: 80%;
+    padding: 1vh 1vw;
+    font-size: 1.5rem;
+    border: 2px solid $black;
+    ::placeholder {
+      color: $grey;
+    }
+  }
+  button {
+    border: none;
+    background: $black;
+    width: 5vw;
+    flex: auto;
+    cursor: pointer;
+
+    svg {
+      width: 30px;
+      height: 20px;
+      fill: $yellow;
+    }
+  }
+}

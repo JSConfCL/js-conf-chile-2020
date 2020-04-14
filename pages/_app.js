@@ -1,10 +1,10 @@
 import React from "react";
 import App from "next/app";
-import "@styles/layout.scss";
 import "@styles/variables.scss";
 import "@styles/font.scss";
 import "@styles/style.scss";
 import "@styles/loader.scss";
+import "@styles/home.scss";
 
 import { AnimatePresence } from "framer-motion";
 import AppContextProvider from "@helpers/appContext";

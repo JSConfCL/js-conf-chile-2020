@@ -15,11 +15,11 @@
     }
   }
 
-  #map {
+  .map {
     position: fixed;
     height: 100vh;
     left: 0;
-    bottom: 2vh;
+    // bottom: 2vh;
   }
 
   section {
@@ -29,65 +29,6 @@
     justify-content: flex-end;
     align-items: center;
     padding: 0 0 20vh;
-
-    .image {
-      width: 250px;
-      height: 250px;
-      margin: 0 0 2vh 0;
-
-      img {
-        z-index: 1;
-        margin: auto;
-        width: 100%;
-      }
-    }
-    .text {
-      color: $black;
-      font-size: 1.5rem;
-
-      h1 {
-        text-align: center;
-      }
-    }
-    .subscribe-form {
-      display: flex;
-      flex-direction: column;
-      align-content: flex-end;
-      margin-top: 6vh;
-
-      p {
-        text-align: center;
-      }
-      .input {
-        align-content: flex-end;
-        display: flex;
-        justify-content: flex-end;
-        padding: 3vh 1vw;
-
-        input {
-          width: 80%;
-          padding: 1vh 1vw;
-          font-size: 1.5rem;
-          border: 2px solid $black;
-          ::placeholder {
-            color: $grey;
-          }
-        }
-        button {
-          border: none;
-          background: $black;
-          width: 5vw;
-          flex: auto;
-          cursor: pointer;
-
-          svg {
-            width: 30px;
-            height: 20px;
-            fill: $yellow;
-          }
-        }
-      }
-    }
   }
 }
 @media (max-width: $desktop) {
