@@ -22,7 +22,7 @@ function Homepage() {
     setTimeout(() => setIsReady(true), 750);
   }, []);
   return (
-    <div>
+    <React.Fragment>
       <Head>
         <title>JSCONFCL</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -46,7 +46,7 @@ function Homepage() {
           </div>
         </section>
       </Layout>
-    </div>
+    </React.Fragment>
   );
 }
 
