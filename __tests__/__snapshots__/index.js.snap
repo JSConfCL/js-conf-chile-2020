@@ -86,40 +86,7 @@ exports[`renders correctly 1`] = `
               }
               width="auto"
             >
-              2
-            </span>
-            <span
-              style={
-                Object {
-                  "position": "relative",
-                  "transform": "translateY(20px) translateZ(0)",
-                }
-              }
-              width="auto"
-            >
-               
-            </span>
-            <span
-              style={
-                Object {
-                  "position": "relative",
-                  "transform": "translateY(20px) translateZ(0)",
-                }
-              }
-              width="auto"
-            >
-              -
-            </span>
-            <span
-              style={
-                Object {
-                  "position": "relative",
-                  "transform": "translateY(20px) translateZ(0)",
-                }
-              }
-              width="auto"
-            >
-               
+              0
             </span>
             <span
               style={
@@ -141,95 +108,7 @@ exports[`renders correctly 1`] = `
               }
               width="auto"
             >
-              3
-            </span>
-            <span
-              style={
-                Object {
-                  "position": "relative",
-                  "transform": "translateY(20px) translateZ(0)",
-                }
-              }
-              width="auto"
-            >
-               
-            </span>
-            <span
-              style={
-                Object {
-                  "position": "relative",
-                  "transform": "translateY(20px) translateZ(0)",
-                }
-              }
-              width="auto"
-            >
-              O
-            </span>
-            <span
-              style={
-                Object {
-                  "position": "relative",
-                  "transform": "translateY(20px) translateZ(0)",
-                }
-              }
-              width="auto"
-            >
-              c
-            </span>
-            <span
-              style={
-                Object {
-                  "position": "relative",
-                  "transform": "translateY(20px) translateZ(0)",
-                }
-              }
-              width="auto"
-            >
-              t
-            </span>
-            <span
-              style={
-                Object {
-                  "position": "relative",
-                  "transform": "translateY(20px) translateZ(0)",
-                }
-              }
-              width="auto"
-            >
-              u
-            </span>
-            <span
-              style={
-                Object {
-                  "position": "relative",
-                  "transform": "translateY(20px) translateZ(0)",
-                }
-              }
-              width="auto"
-            >
-              b
-            </span>
-            <span
-              style={
-                Object {
-                  "position": "relative",
-                  "transform": "translateY(20px) translateZ(0)",
-                }
-              }
-              width="auto"
-            >
-              r
-            </span>
-            <span
-              style={
-                Object {
-                  "position": "relative",
-                  "transform": "translateY(20px) translateZ(0)",
-                }
-              }
-              width="auto"
-            >
-              e
+              1
             </span>
           </div>
         </div>
@@ -241,7 +120,7 @@ exports[`renders correctly 1`] = `
           Entérate de todas nuestras novedades y avances!
         </p>
         <p>
-          (Descuida: detestamos tanto el spam como tú)
+          (Descuida: detestamos el spam tanto como tú)
         </p>
         <form
           className="input"
@@ -249,9 +128,11 @@ exports[`renders correctly 1`] = `
           <input
             id="email"
             name="email-input"
+            placeholder="email"
             type="text"
           />
           <button
+            aria-label="suscribe"
             type="submit"
           >
             <svg
