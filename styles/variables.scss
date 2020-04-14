@@ -1,18 +1,18 @@
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
 // Colours
-$yellow: #eedc3d;
+$yellow: #f0e040;
 $dark-blue: #232742;
-$black: #1C1C1C;
+$black: #31332e;
 $blackest: #151515;
-$grey: #C3C3C3;
-$light-grey: #F0F0F0;
-$blue: #5849FF;
+$grey: #c3c3c3;
+$light-grey: #f0f0f0;
+$blue: #5849ff;
+$outline: rgba(19, 124, 189, 0.6);
+
+$input-border-radius: 5px;
 
 // Fonts
-$circular: 'CircularStd', sans-serif;
-$montserrat: 'Montserrat', sans-serif;
+$circular: "CircularStd", sans-serif;
+$montserrat: "Montserrat", sans-serif;
 
 // Breakpoints
 $big-desktop: 1440px;
@@ -23,7 +23,7 @@ $phone: 479px;
 $small-phone: 376px;
 
 // Elements
-@mixin box-sizing($box-sizing){
+@mixin box-sizing($box-sizing) {
   -webkit-transition: $box-sizing;
   -moz-transition: $box-sizing;
   transition: $box-sizing;
@@ -32,8 +32,7 @@ $small-phone: 376px;
   @if $value == antialiased {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-  @else {
+  } @else {
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: auto;
   }

@@ -1,6 +1,5 @@
 import React from "react";
 import App from "next/app";
-import "@styles/layout.scss";
 import "@styles/variables.scss";
 import "@styles/font.scss";
 import "@styles/style.scss";

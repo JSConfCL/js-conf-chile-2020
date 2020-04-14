@@ -1,36 +1,39 @@
-/* CircularStd @font-face kit */
+/* latin */
 @font-face {
-  font-family: "CircularStd";
-  src: url("/static/font/CircularStd-Black.eot");
-  src: url("/static/font/CircularStd-Black.eot?#iefix") format("embedded-opentype"), url("/static/font/CircularStd-Black.woff") format("woff"), url("/static/font/CircularStd-Black.ttf") format("truetype"), url("/static/font/CircularStd-Black.svg#bcc26993292869431e54c666aafa8fcd") format("svg");
-  font-weight: 800;
+  font-family: "Montserrat";
   font-style: normal;
+  font-weight: 300;
   font-display: swap;
+  src: local("Montserrat Light"), local("Montserrat-Light"),
+    url(https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_cJD3gnD_vx3rCs.woff2)
+      format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
-
+/* latin */
 @font-face {
-  font-family: "CircularStd";
-  src: url("/static/font/CircularStd-Bold.eot");
-  src: url("/static/font/CircularStd-Bold.eot?#iefix") format("embedded-opentype"), url("/static/font/CircularStd-Bold.woff") format("woff"), url("/static/font/CircularStd-Bold.ttf") format("truetype"), url("/static/font/CircularStd-Bold.svg#bcc26993292869431e54c666aafa8fcd") format("svg");
-  font-weight: 600;
+  font-family: "Montserrat";
   font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "CircularStd";
-  src: url("/static/font/CircularStd-Medium.eot");
-  src: url("/static/font/CircularStd-Medium.eot?#iefix") format("embedded-opentype"), url("/static/font/CircularStd-Medium.woff") format("woff"), url("/static/font/CircularStd-Medium.ttf") format("truetype"), url("/static/font/CircularStd-Medium.svg#bcc26993292869431e54c666aafa8fcd") format("svg");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "CircularStd";
-  src: url("/static/font/CircularStd-Book.eot");
-  src: url("/static/font/CircularStd-Book.eot?#iefix") format("embedded-opentype"), url("/static/font/CircularStd-Book.woff") format("woff"), url("/static/font/CircularStd-Book.ttf") format("truetype"), url("/static/font/CircularStd-Book.svg#bcc26993292869431e54c666aafa8fcd") format("svg");
   font-weight: 400;
-  font-style: normal;
   font-display: swap;
+  src: local("Montserrat Regular"), local("Montserrat-Regular"),
+    url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2)
+      format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Montserrat Bold"), local("Montserrat-Bold"),
+    url(https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_dJE3gnD_vx3rCs.woff2)
+      format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
