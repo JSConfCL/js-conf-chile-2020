@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Loader from "@components/loader";
 import { AppContext } from "@helpers/appContext";
 
-function Layout({ children, theme, style }) {
+function Layout({ children, theme }) {
   const { isLoaderOpen, openLoader } = useContext(AppContext);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ function Layout({ children, theme, style }) {
   }, []);
 
   return (
-    <div className={`page-wrapper ${theme}`} style={style}>
+    <div className={`page-wrapper ${theme}`}>
       {isLoaderOpen && <Loader />}
       {!isLoaderOpen && (
         <div>
@@ -52,6 +52,7 @@ function Layout({ children, theme, style }) {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  theme: PropTypes.string.isRequired,
 };
 
 export default Layout;
