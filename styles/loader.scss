@@ -23,11 +23,11 @@
     height: 1rem;
     border-radius: 0.5rem;
 
-    &:nth-child(2n - 1){
+    &:nth-child(2n - 1) {
       background-color: $yellow;
     }
 
-    &:nth-child(2n){
+    &:nth-child(2n) {
       background-color: $black;
     }
   }

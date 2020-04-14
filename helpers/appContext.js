@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 const AppContext = React.createContext();
 const { Provider, Consumer } = AppContext;
@@ -42,7 +42,7 @@ class AppContextProvider extends Component {
           closeLoader,
         }}
       >
-        { children }
+        {children}
       </Provider>
     );
   }

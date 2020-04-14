@@ -4,29 +4,29 @@ import { motion } from "framer-motion";
 const loadingContainerVariants = {
   start: {
     transition: {
-      staggerChildren: 0.2
-    }
+      staggerChildren: 0.2,
+    },
   },
   end: {
     transition: {
-      staggerChildren: 0.2
-    }
-  }
+      staggerChildren: 0.2,
+    },
+  },
 };
 
 const loadingCircleVariants = {
   start: {
-    y: "50%"
+    y: "50%",
   },
   end: {
-    y: "150%"
-  }
+    y: "150%",
+  },
 };
 
 const loadingCircleTransition = {
   duration: 0.5,
   yoyo: Infinity,
-  ease: "easeInOut"
+  ease: "easeInOut",
 };
 
 export default function Loader() {

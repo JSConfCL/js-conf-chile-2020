@@ -1,10 +1,10 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import React from "react";
+import renderer from "react-test-renderer";
 import AppContextProvider from "@helpers/appContext";
 
-import Homepage from '../pages/index';
+import Homepage from "../pages/index";
 
-it('renders correctly', () => {
+it("renders correctly", () => {
   const tree = renderer
     .create(
       <AppContextProvider>
