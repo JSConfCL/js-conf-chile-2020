@@ -4,6 +4,7 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
+    jest: true,
   },
   extends: [
     "plugin:react/recommended",
@@ -11,6 +12,11 @@ module.exports = {
     "prettier",
     "prettier/react",
   ],
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly",
@@ -24,7 +30,6 @@ module.exports = {
   },
   plugins: ["react", "react-hooks", "prettier"],
   rules: {
-    strict: 0,
     "prettier/prettier": ["error"],
   },
 };

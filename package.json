@@ -9,6 +9,7 @@
     "start": "next start",
     "export": "next export",
     "test": "jest --config jest.config.js",
+    "lint": "eslint .",
     "update-snapshot": "npm test -- --updateSnapshot",
     "update-contributors": "all-contributors generate"
   },
