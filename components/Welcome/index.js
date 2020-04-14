@@ -50,16 +50,11 @@ function Welcome() {
         <div>
           <motion.div
             className={style.helloThere}
-            width={"100%"}
-            overflow={"hidden"}
-            background={""}
+            overflow="hidden"
             variants={containerVariants}
-            initial={"before"}
-            animate={"after"}
+            initial="before"
+            animate="after"
             exit="exit"
-            transition={{
-              delayChildren: 0.6,
-            }}
           >
             {string.map((letter, index) => (
               <motion.span key={index} variants={letterVariants}>

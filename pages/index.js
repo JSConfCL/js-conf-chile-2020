@@ -13,12 +13,13 @@ const imagesToPreload = [
 function Homepage() {
   const [isReady, setIsReady] = useState(false);
   useEffect(() => {
+    // Hack para precargar las imagenes y mantener las optimizaciones q implementaba `AppContext`
     imagesToPreload.forEach((image) => {
       const img = new Image();
       img.src = image;
     });
-    // TODO: (felipe) optimize properly later
-    setTimeout(() => setIsReady(true), 500);
+    // TODO: (felipe) optimize after we release
+    setTimeout(() => setIsReady(true), 750);
   }, []);
   return (
     <div>

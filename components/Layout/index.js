@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import style from "./style.module.scss";
 import { motion } from "framer-motion";
+import style from "./style.module.scss";
 
 function Layout({ children, isReady }) {
   if (!isReady) {
