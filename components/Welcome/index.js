@@ -34,9 +34,9 @@ const letterVariants = {
   },
 };
 
-function Welcome() {
+export function Welcome() {
   return (
-    <div className={style.wrapper}>
+    <div className={style.container}>
       <div className={style.imageContainer}>
         <img
           src="/static/images/home/js_conf_amarillo.jpg"
@@ -67,5 +67,3 @@ function Welcome() {
     </div>
   );
 }
-
-export default Welcome;

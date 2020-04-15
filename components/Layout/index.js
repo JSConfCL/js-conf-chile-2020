@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import style from "./style.module.scss";
 
-function Layout({ children, isReady }) {
+export function Layout({ children, isReady }) {
   if (!isReady) {
     return null;
   }
@@ -28,5 +28,3 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
   isReady: PropTypes.bool.isRequired,
 };
-
-export default Layout;

@@ -1,18 +1,15 @@
 @import "../../styles/variables.scss";
 
-.wrapper {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+.container {
+  display: block;
 }
 
 .imageContainer {
   width: 90%;
+  margin: 0 auto;
   max-width: 400px;
 
   img {
-    z-index: 1;
-    margin: auto;
     width: 100%;
   }
 }
