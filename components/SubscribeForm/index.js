@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./style.module.scss";
 
-function SubscribeForm() {
+export function SubscribeForm() {
   const onFormClick = React.useCallback((e) => {
     e.preventDefault();
   }, []);
@@ -13,7 +13,6 @@ function SubscribeForm() {
       </p>
       <form className={style.input} onClick={onFormClick}>
         <input
-          autoFocus
           type="email"
           placeholder="Email"
           name="email-input"
@@ -43,5 +42,3 @@ function SubscribeForm() {
     </div>
   );
 }
-
-export default SubscribeForm;

@@ -1,0 +1,17 @@
+@import "../../styles/variables.scss";
+
+.spacer {
+  padding-top: 0;
+}
+
+@media (max-width: $desktop) {
+  .spacer {
+    padding-top: 128px;
+  }
+}
+
+@media (max-width: $tablet) {
+  .spacer {
+    padding-top: 64px;
+  }
+}

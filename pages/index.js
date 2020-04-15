@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import Layout from "@components/Layout";
-import SubscribeForm from "@components/SubscribeForm";
-import Welcome from "@components/Welcome";
+import { Layout } from "@components/Layout";
+import { SubscribeForm } from "@components/SubscribeForm";
+import { Welcome } from "@components/Welcome";
 import styles from "./home.module.scss";
 
 const imagesToPreload = [
@@ -40,9 +40,13 @@ function Homepage() {
               alt="Mapa de Chile"
             />
           </div>
-          <div className={styles.contentContainer}>
-            <Welcome />
-            <SubscribeForm />
+          <div className={styles.flexContainer}>
+            <div className={styles.contentContainer}>
+              <div className={styles.contentWrapper}>
+                <Welcome />
+                <SubscribeForm />
+              </div>
+            </div>
           </div>
         </section>
       </Layout>
