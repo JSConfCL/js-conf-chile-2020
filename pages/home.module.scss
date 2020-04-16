@@ -39,7 +39,6 @@
   margin: auto;
   max-height: 100%;
   width: 100%;
-  overflow: auto;
 }
 
 .contentWrapper {
@@ -47,9 +46,19 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  overflow: visible;
 }
 @media (max-width: $desktop) {
+  .flexContainer {
+    padding: 0;
+  }
+  .contentContainer {
+    width: 100%;
+    overflow: auto;
+  }
   .contentWrapper {
+    padding-left: 32px;
+    padding-right: 32px;
     flex-direction: column;
   }
 }

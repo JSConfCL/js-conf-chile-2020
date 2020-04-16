@@ -4,8 +4,21 @@ import style from "./style.module.scss";
 export function SubscribeForm() {
   const onFormSubmit = React.useCallback((e) => {
     e.preventDefault();
-    const { value } = e.target?.elements?.email;
-    console.log(value);
+    const email = e.target?.elements?.email?.value;
+    const body = JSON.stringify({
+      email,
+    });
+    const start = async () => {
+      const response = await fetch("/api/email", {
+        method: "POST", // or 'PUT'
+        body,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then((res) => res.json());
+      console.log({ response });
+    };
+    start();
   }, []);
   return (
     <div className={style.subscribeForm}>
