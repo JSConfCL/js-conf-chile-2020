@@ -2,8 +2,10 @@ import React from "react";
 import style from "./style.module.scss";
 
 export function SubscribeForm() {
-  const onFormClick = React.useCallback((e) => {
+  const onFormSubmit = React.useCallback((e) => {
     e.preventDefault();
+    const { value } = e.target?.elements?.email;
+    console.log(value);
   }, []);
   return (
     <div className={style.subscribeForm}>
@@ -11,15 +13,17 @@ export function SubscribeForm() {
         Entérate de las novedades y avances!
         <small>(Descuida, detestamos el spam tanto como tú)</small>
       </p>
-      <form className={style.input} onClick={onFormClick}>
+      <form className={style.input} onSubmit={onFormSubmit}>
         <input
+          value="qweqweads@asd.com"
+          onChange={() => {}}
           type="email"
           placeholder="Email"
           name="email-input"
           input-mode="email"
           id="email"
         />
-        <button type="submit" aria-label="suscribe">
+        <button type="submit" aria-label="suscribe" autoFocus>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
