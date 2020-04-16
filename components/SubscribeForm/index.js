@@ -9,14 +9,17 @@ export function SubscribeForm() {
       email,
     });
     const start = async () => {
-      const response = await fetch("/api/email", {
-        method: "POST", // or 'PUT'
-        body,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }).then((res) => res.json());
-      console.log({ response });
+      try {
+        await fetch("/api/email", {
+          method: "POST", // or 'PUT'
+          body,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }).then((res) => res.json());
+      } catch (e) {
+        console.error(e);
+      }
     };
     start();
   }, []);
