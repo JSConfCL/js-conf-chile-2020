@@ -7,10 +7,16 @@
 .imageContainer {
   width: 90%;
   margin: 0 auto;
-  max-width: 400px;
+  max-width: 350px;
 
   img {
     width: 100%;
+  }
+}
+
+@media (max-width: $desktop) {
+  .imageContainer {
+    max-width: 400px;
   }
 }
 

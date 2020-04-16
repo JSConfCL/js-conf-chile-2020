@@ -41,6 +41,8 @@
     "@zeit/next-sass": "^1.0.1",
     "framer-motion": "^1.7.0",
     "isomorphic-unfetch": "^3.0.0",
+    "mailchimp-api-v3": "^1.13.1",
+    "md5": "^2.2.1",
     "next": "^9.3.2",
     "nextjs-fonts": "^0.22.0",
     "node-sass": "^4.13.1",
@@ -51,7 +53,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run update-snapshot && npm test && pretty-quick --staged"
+      "pre-commit": "pretty-quick --staged"
     }
   }
 }
