@@ -6,13 +6,16 @@ const mailchimpListID = process.env.MAILCHIMP_LIST_ID;
 const mailchimp = new Mailchimp(mailchimpApiKey);
 
 export default async (req, res) => {
+  res.setHeader("Content-Type", "application/json");
   if (req.method !== "POST") {
-    res.end();
+    res.status(200).json({ success: false });
     return;
   }
-  res.setHeader("Content-Type", "application/json");
+  const email = req?.body?.email?.trim()?.toLowerCase();
+  if (!email) {
+    throw new Error("No email provided");
+  }
   try {
-    const email = req?.body?.email?.trim()?.toLowerCase();
     const emailHash = md5(email);
     const response = await mailchimp.put(
       `/lists/${mailchimpListID}/members/${emailHash}`,
