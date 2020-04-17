@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./style.module.scss";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const formStates = {
   success: "success",
@@ -13,23 +14,30 @@ const formMessages = {
 };
 
 export function SubscribeForm() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [formState, setFormState] = React.useState();
   const onFormSubmit = React.useCallback((e) => {
     e.preventDefault();
     const email = e.target?.elements?.email?.value;
-    const body = JSON.stringify({
-      email,
-    });
     const start = async () => {
       try {
+        const recaptchaToken = await executeRecaptcha("subscribe_form");
+        const body = JSON.stringify({
+          email,
+          recaptchaToken,
+        });
+
         setFormState(formStates.loading);
-        await fetch("/api/email", {
+        const { success } = await fetch("/api/email", {
           method: "POST", // or 'PUT'
           body,
           headers: {
             "Content-Type": "application/json",
           },
         }).then((res) => res.json());
+        if (!success) {
+          throw new Error();
+        }
         setFormState(formStates.success);
       } catch (e) {
         setFormState(formStates.error);
@@ -45,9 +53,6 @@ export function SubscribeForm() {
         <small>(Descuida, detestamos el spam tanto como tú)</small>
       </p>
       <form className={style.input} onSubmit={onFormSubmit}>
-        <label className={style.hiddenLabel} htmlFor="email">
-          ingresa tu email para subscribirte
-        </label>
         <input
           type="email"
           placeholder="Email"

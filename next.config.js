@@ -19,4 +19,10 @@ const appConfig = {
   },
 };
 
-module.exports = withFonts(appConfig);
+module.exports = {
+  ...withFonts(appConfig),
+  env: {
+    GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
+    RECAPTCHA_PUBLIC_KEY: process.env.RECAPTCHA_PUBLIC_KEY,
+  },
+};
