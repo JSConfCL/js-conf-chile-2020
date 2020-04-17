@@ -5,6 +5,7 @@ const md5 = require("md5");
 const mailchimpApiKey = process.env.MAILCHIMP_API_KEY;
 const mailchimpListID = process.env.MAILCHIMP_LIST_ID;
 const recaptchaSecretKey = process.env.RECAPTCHA_SECRET_KEY;
+
 const mailchimp = new Mailchimp(mailchimpApiKey);
 
 export default async (req, res) => {
@@ -15,7 +16,6 @@ export default async (req, res) => {
   }
   const email = req?.body?.email?.trim()?.toLowerCase();
   const recaptchaToken = req?.body?.recaptchaToken;
-
   if (!email) {
     throw new Error("No email provided");
   }

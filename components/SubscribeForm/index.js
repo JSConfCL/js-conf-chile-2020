@@ -19,13 +19,14 @@ export function SubscribeForm() {
   const onFormSubmit = React.useCallback((e) => {
     e.preventDefault();
     const email = e.target?.elements?.email?.value;
-    const recaptchaToken = executeRecaptcha("subscribe_form");
-    const body = JSON.stringify({
-      email,
-      recaptchaToken,
-    });
     const start = async () => {
       try {
+        const recaptchaToken = await executeRecaptcha("subscribe_form");
+        const body = JSON.stringify({
+          email,
+          recaptchaToken,
+        });
+
         setFormState(formStates.loading);
         const { success } = await fetch("/api/email", {
           method: "POST", // or 'PUT'
