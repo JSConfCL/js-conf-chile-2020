@@ -5,7 +5,7 @@ import { SubscribeForm } from "@components/SubscribeForm";
 import { Welcome } from "@components/Welcome";
 import styles from "./home.module.scss";
 
-import { GA_TRACKING_ID } from "../lib/googleAnalytics";
+import { GA_TRACKING_ID } from "@helpers/googleAnalytics";
 
 const imagesToPreload = [
   "/static/images/home/js_conf_amarillo.jpg",
