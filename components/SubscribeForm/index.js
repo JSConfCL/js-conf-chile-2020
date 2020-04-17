@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./style.module.scss";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const formStates = {
   success: "success",
@@ -13,16 +14,20 @@ const formMessages = {
 };
 
 export function SubscribeForm() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [formState, setFormState] = React.useState();
   const onFormSubmit = React.useCallback((e) => {
     e.preventDefault();
     const email = e.target?.elements?.email?.value;
+    const recaptchaToken = executeRecaptcha("subscribe_form");
     const body = JSON.stringify({
       email,
+      recaptchaToken,
     });
     const start = async () => {
       try {
         setFormState(formStates.loading);
+
         await fetch("/api/email", {
           method: "POST", // or 'PUT'
           body,

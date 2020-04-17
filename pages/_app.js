@@ -1,5 +1,7 @@
 import React from "react";
 import App from "next/app";
+import Router from "next/router";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import "@styles/variables.scss";
 import "@styles/font.scss";
 import "@styles/style.scss";
@@ -7,6 +9,9 @@ import "@styles/loader.scss";
 
 import { AnimatePresence } from "framer-motion";
 import AppContextProvider from "@helpers/appContext";
+import { pageview } from "../lib/googleAnalytics";
+
+Router.events.on("routeChangeComplete", (url) => pageview(url));
 
 class MyApp extends App {
   render() {
@@ -17,9 +22,11 @@ class MyApp extends App {
     // exitBeforeEnter: AnimatePresence will only render one component at a time. The exiting component will finished its exit animation before the entering component is rendered
     return (
       <AppContextProvider>
-        <AnimatePresence exitBeforeEnter>
-          <Component {...pageProps} key={router.route} />
-        </AnimatePresence>
+        <GoogleReCaptchaProvider reCaptchaKey="6LdfR-oUAAAAAHZ7qMBCS85ZoALGOUSAhVEoUFuZ">
+          <AnimatePresence exitBeforeEnter>
+            <Component {...pageProps} key={router.route} />
+          </AnimatePresence>
+        </GoogleReCaptchaProvider>
       </AppContextProvider>
     );
   }

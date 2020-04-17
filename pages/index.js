@@ -5,6 +5,8 @@ import { SubscribeForm } from "@components/SubscribeForm";
 import { Welcome } from "@components/Welcome";
 import styles from "./home.module.scss";
 
+import { GA_TRACKING_ID } from "../lib/googleAnalytics";
+
 const imagesToPreload = [
   "/static/images/home/js_conf_amarillo.jpg",
   "/static/images/home/mapa_chile.png",
@@ -30,6 +32,21 @@ function Homepage() {
         <meta
           name="description"
           content="La conferencia de Javascript mas importante llega a Chile"
+        />
+
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_TRACKING_ID}', {
+page_path: window.location.pathname,
+            });`,
+          }}
         />
       </Head>
       <Layout isReady={isReady}>

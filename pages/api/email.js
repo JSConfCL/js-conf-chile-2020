@@ -1,8 +1,10 @@
 const Mailchimp = require("mailchimp-api-v3");
-var md5 = require("md5");
+const fetch = require("node-fetch");
+const md5 = require("md5");
 
 const mailchimpApiKey = process.env.MAILCHIMP_API_KEY;
 const mailchimpListID = process.env.MAILCHIMP_LIST_ID;
+const recaptchaSecretKey = process.env.RECAPTCHA_SECRET_KEY;
 const mailchimp = new Mailchimp(mailchimpApiKey);
 
 export default async (req, res) => {
@@ -12,11 +14,21 @@ export default async (req, res) => {
     return;
   }
   const email = req?.body?.email?.trim()?.toLowerCase();
+  const recaptchaToken = req?.body?.recaptchaToken;
+
   if (!email) {
     throw new Error("No email provided");
   }
+  const emailHash = md5(email);
+  const captchUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecretKey}&response=${recaptchaToken}`;
   try {
-    const emailHash = md5(email);
+    const captchResponse = await fetch(captchUrl, {
+      method: "post",
+    })
+      .then((response) => response.json())
+      .then((googleResponse) => res.json({ google_response: googleResponse }));
+
+    console.log({ captchResponse });
     const response = await mailchimp.put(
       `/lists/${mailchimpListID}/members/${emailHash}`,
       {
