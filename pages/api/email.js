@@ -20,17 +20,14 @@ export default async (req, res) => {
     throw new Error("No email provided");
   }
   const emailHash = md5(email);
-  const captchaUrl = `https://www.google.com/recaptcha/api/siteverify`;
+  const captchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecretKey}&response=${recaptchaToken}`;
   try {
-    const captchaResponse = await fetch(captchaUrl, {
-      method: "post",
-      body: JSON.stringify({
-        secret: recaptchaSecretKey,
-        response: recaptchaToken,
-      }),
-    }).then((response) => response.json());
+    const captchaResponse = await fetch(captchaUrl).then((response) =>
+      response.json()
+    );
     if (!captchaResponse.success) {
-      throw new Error("captcha failed", captchaResponse);
+      console.log({ captchaResponse });
+      throw new Error("Failed captcha");
     }
     const response = await mailchimp.put(
       `/lists/${mailchimpListID}/members/${emailHash}`,
@@ -42,9 +39,8 @@ export default async (req, res) => {
     );
     console.log({ response });
     res.status(200).json({ success: true });
-  } catch (e) {
-    console.error(e);
-    console.error("ERROR, could not save email");
+  } catch (error) {
+    console.error(error);
     res.status(200).json({ success: false });
   }
 };
