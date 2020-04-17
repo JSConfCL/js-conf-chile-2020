@@ -27,14 +27,16 @@ export function SubscribeForm() {
     const start = async () => {
       try {
         setFormState(formStates.loading);
-
-        await fetch("/api/email", {
+        const { success } = await fetch("/api/email", {
           method: "POST", // or 'PUT'
           body,
           headers: {
             "Content-Type": "application/json",
           },
         }).then((res) => res.json());
+        if (!success) {
+          throw new Error();
+        }
         setFormState(formStates.success);
       } catch (e) {
         setFormState(formStates.error);

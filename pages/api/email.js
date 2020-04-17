@@ -20,15 +20,18 @@ export default async (req, res) => {
     throw new Error("No email provided");
   }
   const emailHash = md5(email);
-  const captchUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecretKey}&response=${recaptchaToken}`;
+  const captchaUrl = `https://www.google.com/recaptcha/api/siteverify`;
   try {
-    const captchResponse = await fetch(captchUrl, {
+    const captchaResponse = await fetch(captchaUrl, {
       method: "post",
-    })
-      .then((response) => response.json())
-      .then((googleResponse) => res.json({ google_response: googleResponse }));
-
-    console.log({ captchResponse });
+      body: JSON.stringify({
+        secret: recaptchaSecretKey,
+        response: recaptchaToken,
+      }),
+    }).then((response) => response.json());
+    if (!captchaResponse.success) {
+      throw new Error("captcha failed", captchaResponse);
+    }
     const response = await mailchimp.put(
       `/lists/${mailchimpListID}/members/${emailHash}`,
       {
