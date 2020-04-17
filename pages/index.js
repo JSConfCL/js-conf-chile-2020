@@ -7,16 +7,17 @@ import styles from "./home.module.scss";
 
 const imagesToPreload = [
   "/static/images/home/js_conf_amarillo.jpg",
-  "/static/images/home/mapa_chile.svg",
+  "/static/images/home/mapa_chile.png",
 ];
 
 function Homepage() {
   const [isReady, setIsReady] = useState(false);
   useEffect(() => {
     // Hack para precargar las imagenes y mantener las optimizaciones q implementaba `AppContext`
-    imagesToPreload.forEach((image) => {
-      const img = new Image();
-      img.src = image;
+    imagesToPreload.forEach((imageSource) => {
+      const image = new Image();
+      image.src = imageSource;
+      window[image] = image;
     });
     // TODO: (felipe) optimize after we release
     setTimeout(() => setIsReady(true), 750);
@@ -36,7 +37,7 @@ function Homepage() {
           <div className={styles.mapImageWrapper}>
             <img
               className={styles.mapImage}
-              src="/static/images/home/mapa_chile.svg"
+              src="/static/images/home/mapa_chile.png"
               alt="Mapa de Chile"
             />
           </div>
