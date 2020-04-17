@@ -12,6 +12,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="es">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin />
         <Head />
         <body>
           <Main />

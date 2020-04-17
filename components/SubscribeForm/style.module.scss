@@ -38,14 +38,15 @@
   }
 }
 
+.hiddenLabel {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
 .input {
   display: flex;
   margin-top: 32px;
-  label {
-    height: 0;
-    width: 0;
-    overflow: hidden;
-  }
 
   input {
     outline: none;
