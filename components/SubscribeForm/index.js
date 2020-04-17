@@ -44,16 +44,17 @@ export function SubscribeForm() {
         Entérate de las novedades y avances!
         <small>(Descuida, detestamos el spam tanto como tú)</small>
       </p>
-      <form className={style.input} onSubmit={onFormSubmit} aria-label="form">
-        <label>
-          <input
-            type="email"
-            placeholder="Email"
-            name="email-input"
-            input-mode="email"
-            id="email"
-          />
+      <form className={style.input} onSubmit={onFormSubmit}>
+        <label className={style.hiddenLabel} htmlFor="email">
+          ingresa tu email para subscribirte
         </label>
+        <input
+          type="email"
+          placeholder="Email"
+          name="email-input"
+          input-mode="email"
+          id="email"
+        />
         <button
           type="submit"
           aria-label="suscribe"
