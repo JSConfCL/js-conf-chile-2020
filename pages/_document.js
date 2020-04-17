@@ -14,7 +14,13 @@ class MyDocument extends Document {
       <Html lang="es">
         <link
           rel="preconnect"
-          href="https://fonts.gstatic.com/"
+          href="https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2"
+          // Necesitamos pasarle un valor al attributo, para que se agregue al dom, si no, es solamente interpretado por React
+          crossOrigin="true"
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_dJE3gnD_vx3rCs.woff2"
           // Necesitamos pasarle un valor al attributo, para que se agregue al dom, si no, es solamente interpretado por React
           crossOrigin="true"
         />
