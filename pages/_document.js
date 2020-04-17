@@ -12,7 +12,12 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="es">
-        <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com/"
+          // Necesitamos pasarle un valor al attributo, para que se agregue al dom, si no, es solamente interpretado por React
+          crossOrigin="true"
+        />
         <Head />
         <body>
           <Main />

@@ -20,7 +20,7 @@ class MyApp extends App {
     // router.route returns the route your component lives on.
     // exitBeforeEnter: AnimatePresence will only render one component at a time. The exiting component will finished its exit animation before the entering component is rendered
     return (
-      <GoogleReCaptchaProvider reCaptchaKey="6LdfR-oUAAAAAHZ7qMBCS85ZoALGOUSAhVEoUFuZ">
+      <GoogleReCaptchaProvider reCaptchaKey={process.env.RECAPTCHA_PUBLIC_KEY}>
         <AnimatePresence exitBeforeEnter>
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>

@@ -53,9 +53,6 @@ export function SubscribeForm() {
         <small>(Descuida, detestamos el spam tanto como tú)</small>
       </p>
       <form className={style.input} onSubmit={onFormSubmit}>
-        <label className={style.hiddenLabel} htmlFor="email">
-          ingresa tu email para subscribirte
-        </label>
         <input
           type="email"
           placeholder="Email"
