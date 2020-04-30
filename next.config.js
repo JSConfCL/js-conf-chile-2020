@@ -1,8 +1,6 @@
 const path = require("path");
 const withFonts = require("nextjs-fonts");
 
-console.log(process.env);
-
 const routes = {
   "/": { page: "/" },
 };
