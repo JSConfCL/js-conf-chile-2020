@@ -43,7 +43,7 @@
     "isomorphic-unfetch": "^3.0.0",
     "mailchimp-api-v3": "^1.13.1",
     "md5": "^2.2.1",
-    "next": "^9.3.2",
+    "next": "^11.1.0",
     "nextjs-fonts": "^0.22.0",
     "node-fetch": "^2.6.0",
     "node-sass": "^4.13.1",
