@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import style from "./style.module.scss";
 
 // Create an array of letters
-const string = Array.from("2021");
+const string = Array.from("2022");
 // Add staggering effect to the children of the container
 const containerVariants = {
   before: {},
