@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import style from "./style.module.scss";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
@@ -15,8 +15,9 @@ const formMessages = {
 
 export function SubscribeForm() {
   const { executeRecaptcha } = useGoogleReCaptcha();
-  const [formState, setFormState] = React.useState();
-  const onFormSubmit = React.useCallback((e) => {
+  const [formState, setFormState] = useState();
+
+  const onFormSubmit = useCallback((e) => {
     e.preventDefault();
     const email = e.target?.elements?.email?.value;
     const start = async () => {
@@ -46,6 +47,7 @@ export function SubscribeForm() {
     };
     start();
   }, []);
+
   return (
     <div className={style.subscribeForm}>
       <p>
