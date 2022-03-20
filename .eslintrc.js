@@ -1,5 +1,5 @@
 module.exports = {
-  parser: "babel-eslint",
+  parser: "@babel/eslint-parser",
   env: {
     browser: true,
     es6: true,
@@ -7,14 +7,25 @@ module.exports = {
     jest: true,
   },
   extends: [
+    "next",
     "plugin:react/recommended",
     "standard",
+    "plugin:prettier/recommended",
     "prettier",
-    "prettier/react",
+    "plugin:import/recommended",
   ],
   settings: {
     react: {
       version: "detect",
+    },
+    "import/resolver": {
+      alias: {
+        map: [
+          ["@components", "./components"],
+          ["@helpers", "./helpers"],
+          ["@styles", "./styles"],
+        ],
+      },
     },
   },
   globals: {
@@ -27,6 +38,7 @@ module.exports = {
     },
     ecmaVersion: 2018,
     sourceType: "module",
+    requireConfigFile: false,
   },
   plugins: ["react", "react-hooks", "prettier"],
   rules: {
