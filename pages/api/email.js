@@ -1,6 +1,6 @@
-const Mailchimp = require("mailchimp-api-v3");
-const fetch = require("node-fetch");
-const md5 = require("md5");
+import Mailchimp from "mailchimp-api-v3";
+import fetch from "node-fetch";
+import md5 from "md5";
 
 const mailchimpApiKey = process.env.MAILCHIMP_API_KEY;
 const mailchimpListID = process.env.MAILCHIMP_LIST_ID;

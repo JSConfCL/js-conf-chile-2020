@@ -7,14 +7,18 @@ const routes = {
 
 const appConfig = {
   /* config options here */
-  exportTrailingSlash: true,
+  trailingSlash: true,
   exportPathMap: function () {
     return routes;
   },
   webpack(config, options) {
-    config.resolve.alias["@components"] = path.join(__dirname, "components");
-    config.resolve.alias["@helpers"] = path.join(__dirname, "helpers");
-    config.resolve.alias["@styles"] = path.join(__dirname, "styles");
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      // your aliases
+      "@components": path.join(__dirname, "components"),
+      "@helpers": path.join(__dirname, "helpers"),
+      "@styles": path.join(__dirname, "styles"),
+    };
     return config;
   },
 };

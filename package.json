@@ -14,15 +14,17 @@
     "update-contributors": "all-contributors generate"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.17.0",
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "all-contributors-cli": "^6.20.0",
-    "babel-eslint": "^10.1.0",
     "babel-jest": "^27.5.1",
     "eslint": "^8.11.0",
+    "eslint-config-next": "^12.1.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^16.0.3",
+    "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -50,8 +52,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-google-recaptcha-v3": "^1.9.7",
-    "react-helmet": "^6.1.0",
-    "sass": "^1.49.9"
+    "react-helmet": "^6.1.0"
   },
   "husky": {
     "hooks": {
