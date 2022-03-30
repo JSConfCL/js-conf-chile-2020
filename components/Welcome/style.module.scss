@@ -8,10 +8,8 @@
   width: 90%;
   margin: 0 auto;
   max-width: 350px;
-
-  img {
-    width: 100%;
-  }
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: $desktop) {
@@ -36,4 +34,9 @@
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+.image {
+  width: 200px;
+  max-width: 90%;
 }

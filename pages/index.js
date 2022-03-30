@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import ImageComponent from "next/image";
 import { Layout } from "@components/Layout";
 import { SubscribeForm } from "@components/SubscribeForm";
 import { Welcome } from "@components/Welcome";
@@ -52,15 +51,6 @@ function Homepage() {
       </Head>
       <Layout isReady={isReady}>
         <section className={styles.home}>
-          <div className={styles.mapImageWrapper}>
-            <ImageComponent
-              className={styles.mapImage}
-              src="/static/images/home/mapa_chile.png"
-              alt="Mapa de Chile"
-              width={200}
-              height={800}
-            />
-          </div>
           <div className={styles.flexContainer}>
             <div className={styles.contentContainer}>
               <div className={styles.contentWrapper}>

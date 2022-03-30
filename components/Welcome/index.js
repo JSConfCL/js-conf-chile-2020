@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import style from "./style.module.scss";
 
@@ -39,11 +38,10 @@ export function Welcome() {
   return (
     <div className={style.container}>
       <div className={style.imageContainer}>
-        <Image
+        <img
+          class={style.image}
           src="/static/images/home/js_conf_amarillo.jpg"
           alt="Logo JS Conf Chile 2020"
-          width={200}
-          height={200}
         />
       </div>
       <div className={style.text}>
