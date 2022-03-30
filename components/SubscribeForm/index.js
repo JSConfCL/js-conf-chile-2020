@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import style from "./style.module.scss";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+// import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const formStates = {
   success: "success",
@@ -14,29 +14,29 @@ const formMessages = {
 };
 
 export function SubscribeForm() {
-  const { executeRecaptcha } = useGoogleReCaptcha();
-  const [formState, setFormState] = useState();
 
+  const [formState, setFormState] = useState();
   const onFormSubmit = useCallback((e) => {
     e.preventDefault();
     const email = e.target?.elements?.email?.value;
     const start = async () => {
       try {
-        const recaptchaToken = await executeRecaptcha("subscribe_form");
+        // const recaptchaToken = await executeRecaptcha("subscribe_form");
         const body = JSON.stringify({
           email,
-          recaptchaToken,
+          // recaptchaToken,
         });
 
         setFormState(formStates.loading);
-        const { success } = await fetch("/api/email", {
+        // const response = await fetch("http://127.0.0.1:8787", {
+        const { success } = await fetch("https://jsconf-chile-email-worker-1.jsconfcl.workers.dev", {
           method: "POST", // or 'PUT'
           body,
           headers: {
             "Content-Type": "application/json",
           },
-        }).then((res) => res.json());
-        if (!success) {
+        })
+        if (response.status !== 200) {
           throw new Error();
         }
         setFormState(formStates.success);
