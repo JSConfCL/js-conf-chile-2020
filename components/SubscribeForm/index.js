@@ -29,7 +29,7 @@ export function SubscribeForm() {
 
         setFormState(formStates.loading);
         // const response = await fetch("http://127.0.0.1:8787", {
-        const { success } = await fetch("https://jsconf-chile-email-worker-1.jsconfcl.workers.dev", {
+        const response = await fetch("https://jsconf-chile-email-worker-1.jsconfcl.workers.dev", {
           method: "POST", // or 'PUT'
           body,
           headers: {
